@@ -114,30 +114,25 @@
             width: 120px;
             height: 120px;
             aspect-ratio: 1 / 1;
-            background-color: #e0e0e0;
-            background-size: cover;
+            background-color: transparent;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
+            background-image: url('https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/logo_3.png');
             border-radius: 50%;
             margin: 0 auto var(--spacing-md);
-            border: 3px dashed #999;
+            border: none;
             position: relative;
             z-index: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
         }
 
         @media (min-width: 768px) {
             .logo-placeholder {
                 width: 150px;
                 height: 150px;
-                font-size: 0.875rem;
             }
         }
 
@@ -260,15 +255,12 @@
 
         .team-image-placeholder {
             width: 100%;
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 1 / 1;
             background-color: #e0e0e0;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            border: 2px dashed #999;
-            border-left: none;
-            border-right: none;
-            border-top: none;
+            border: none;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -278,7 +270,14 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             position: relative;
+            overflow: hidden;
+        }
+
+        .team-image-placeholder img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .team-image-placeholder::before {
@@ -295,7 +294,7 @@
 
         .team-name {
             font-family: 'Philosopher', sans-serif;
-            font-size: 1.125rem;
+            font-size: 1.3125rem;
             font-weight: 700;
             color: #333333;
             margin: 0;
@@ -307,6 +306,7 @@
             grid-template-columns: 1fr;
             gap: var(--spacing-md);
             margin-top: var(--spacing-lg);
+            justify-items: center;
         }
 
         @media (min-width: 768px) {
@@ -644,23 +644,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
-            font-size: 1.125rem;
-            font-weight: 600;
-            padding: 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 2px dashed #999;
         }
 
         .banner-desktop {
             height: 600px;
             display: flex;
+            background-image: url('https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/padel_ball.jpg');
         }
 
         .banner-mobile {
             height: 450px;
             display: none;
+            background-image: url('https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/mobile_image.jpg');
         }
 
         /* Responsive banner switching */
@@ -830,9 +825,9 @@
 
         .gallery-image {
             width: 100%;
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 8 / 9;
             background-color: #e0e0e0;
-            background-size: cover;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             border-radius: var(--radius-lg);
@@ -844,7 +839,15 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border: 2px dashed #999;
+            overflow: hidden;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            border-radius: var(--radius-lg);
         }
 
         .gallery-nav {
@@ -925,10 +928,6 @@
                 padding: 0 55px;
             }
         }
-
-        .logo-placeholder{
-            border-radius: 50%;
-        }
     </style>
 </head>
 <body>
@@ -936,9 +935,7 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="">
-                    <img src="./assets/logo_3.png" alt="" width="200" height="200" srcset="">
-                </div>
+                <div class="logo-placeholder"></div>
                 <h1>Goa Padel League</h1>
                 <p class="header-subtitle">Goa's Premier Padel Tournament - Where Competition Meets Community</p>
             </div>
@@ -964,49 +961,65 @@
             </div>
             <div class="teams-grid">
                 <div class="team-card">
-                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-image-placeholder">
+                        <img src="/assets/teams.jpg" alt="Revora Stories Team" loading="lazy">
+                    </div>
                     <div class="team-info">
                         <h3 class="team-name">Revora Stories</h3>
                     </div>
                 </div>
                 <div class="team-card">
-                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-image-placeholder">
+                        <img src="/assets/teams.jpg" alt="Anjuna Tweets Team" loading="lazy">
+                    </div>
                     <div class="team-info">
                         <h3 class="team-name">Anjuna Tweets</h3>
                     </div>
                 </div>
                 <div class="team-card">
-                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-image-placeholder">
+                        <img src="/assets/teams.jpg" alt="Siolim Snaps Team" loading="lazy">
+                    </div>
                     <div class="team-info">
                         <h3 class="team-name">Siolim Snaps</h3>
                     </div>
                 </div>
                 <div class="team-card">
-                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-image-placeholder">
+                        <img src="/assets/teams.jpg" alt="Saligao Reels Team" loading="lazy">
+                    </div>
                     <div class="team-info">
                         <h3 class="team-name">Saligao Reels</h3>
                     </div>
                 </div>
                 <div class="team-card">
-                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-image-placeholder">
+                        <img src="/assets/teams.jpg" alt="Mapusa Memes Team" loading="lazy">
+                    </div>
                     <div class="team-info">
                         <h3 class="team-name">Mapusa Memes</h3>
                     </div>
                 </div>
                 <div class="team-card">
-                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-image-placeholder">
+                        <img src="/assets/teams.jpg" alt="Panaji Posts Team" loading="lazy">
+                    </div>
                     <div class="team-info">
                         <h3 class="team-name">Panaji Posts</h3>
                     </div>
                 </div>
                 <div class="team-card">
-                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-image-placeholder">
+                        <img src="/assets/teams.jpg" alt="Candolim Tags Team" loading="lazy">
+                    </div>
                     <div class="team-info">
                         <h3 class="team-name">Candolim Tags</h3>
                     </div>
                 </div>
                 <div class="team-card">
-                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-image-placeholder">
+                        <img src="/assets/teams.jpg" alt="Vasco Vibes Team" loading="lazy">
+                    </div>
                     <div class="team-info">
                         <h3 class="team-name">Vasco Vibes</h3>
                     </div>
@@ -1053,12 +1066,8 @@
 
     <!-- Banner Section -->
     <section class="banner-section">
-        <div class="banner-desktop">
-            <img src="./assets/padel_ball.jpg" alt="" srcset="">
-        </div>
-        <div class="banner-mobile">
-            <img src="./assets/mobile_image.jpg" width="100%" height="100%" alt="" srcset="">
-        </div>
+        <div class="banner-desktop"></div>
+        <div class="banner-mobile"></div>
     </section>
 
 
@@ -1131,7 +1140,7 @@
     <section class="gallery-section section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Photo Gallery</h2>
+                <h2 class="section-title">Gallery</h2>
                 <p class="section-description">Capturing the excitement, energy, and spirit of the Goa Padel League.</p>
             </div>
         </div>
@@ -1144,34 +1153,39 @@
             <div class="gallery-carousel-container">
                 <div class="gallery-carousel-track">
                     <div class="gallery-item">
-                        <div class="gallery-image">Gallery Image 1</div>
+                        <div class="gallery-image">
+                            <img src="/assets/g1.jpg" alt="Gallery Image 1" loading="lazy">
+                        </div>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-image">Gallery Image 2</div>
+                        <div class="gallery-image">
+                            <img src="/assets/g2.jpg" alt="Gallery Image 2" loading="lazy">
+                        </div>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-image">Gallery Image 3</div>
+                        <div class="gallery-image">
+                            <img src="/assets/g3.jpg" alt="Gallery Image 3" loading="lazy">
+                        </div>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-image">Gallery Image 4</div>
+                        <div class="gallery-image">
+                            <img src="/assets/g4.jpg" alt="Gallery Image 4" loading="lazy">
+                        </div>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-image">Gallery Image 5</div>
+                        <div class="gallery-image">
+                            <img src="/assets/g5.jpg" alt="Gallery Image 5" loading="lazy">
+                        </div>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-image">Gallery Image 6</div>
+                        <div class="gallery-image">
+                            <img src="/assets/g6.jpg" alt="Gallery Image 6" loading="lazy">
+                        </div>
                     </div>
                     <div class="gallery-item">
-                        <div class="gallery-image">Gallery Image 7</div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-image">Gallery Image 8</div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-image">Gallery Image 9</div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-image">Gallery Image 10</div>
+                        <div class="gallery-image">
+                            <img src="/assets/g7.jpg" alt="Gallery Image 7" loading="lazy">
+                        </div>
                     </div>
                 </div>
             </div>
