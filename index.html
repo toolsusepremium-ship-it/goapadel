@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goa Padel League - Official Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Design System Variables */
+        :root {
+            --primary-blue: #f8f2d2;
+            --accent-blue: #f8f2d2;
+            --dark-blue: #d4c5a0;
+            --light-blue: #fefcf5;
+            --accent-orange: #FF6B35;
+            --text-dark: #1A1A1A;
+            --text-medium: #4A4A4A;
+            --text-light: #707070;
+            --bg-white: #FFFFFF;
+            --bg-light: #F8F9FA;
+            --border-light: #E0E0E0;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-2xl: 64px;
+            --spacing-3xl: 96px;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Philosopher', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-dark);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 600;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-lg);
+            }
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: #333333;
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            opacity: 0.3;
+        }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 120px;
+            aspect-ratio: 1 / 1;
+            background-color: #e0e0e0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            margin: 0 auto var(--spacing-md);
+            border: 3px dashed #999;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        @media (min-width: 768px) {
+            .logo-placeholder {
+                width: 150px;
+                height: 150px;
+                font-size: 0.875rem;
+            }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            color: #333333;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: none;
+        }
+
+        .header-subtitle {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: rgba(51, 51, 51, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-title {
+            color: #333333;
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent-orange);
+            border-radius: 2px;
+        }
+
+        .section-description {
+            max-width: 700px;
+            margin: var(--spacing-md) auto 0;
+            color: var(--text-medium);
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            background-color: var(--bg-white);
+            padding: var(--spacing-xl) 0;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: var(--spacing-lg);
+            background-color: var(--light-blue);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .intro-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .intro-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Franchise Teams Grid */
+        .teams-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        @media (min-width: 640px) {
+            .teams-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .teams-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .team-card {
+            background-color: var(--bg-white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .team-image-placeholder {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background-color: #e0e0e0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 2px dashed #999;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            object-fit: cover;
+        }
+
+        .team-image-placeholder::before {
+            content: '\1F3F8';
+            font-size: 3rem;
+            opacity: 0.15;
+            position: absolute;
+        }
+
+        .team-info {
+            padding: var(--spacing-md);
+            text-align: center;
+        }
+
+        .team-name {
+            font-family: 'Philosopher', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #333333;
+            margin: 0;
+        }
+
+        /* Info Cards Section */
+        .info-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        @media (min-width: 768px) {
+            .info-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .info-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .info-card {
+            background-color: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .info-card-icon {
+            width: 80px;
+            height: 80px;
+            aspect-ratio: 1 / 1;
+            background-color: var(--light-blue);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: var(--radius-md);
+            margin: 0 auto var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .info-card h3 {
+            color: #333333;
+            text-align: center;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .info-card-content {
+            text-align: center;
+            color: var(--text-medium);
+        }
+
+        .info-card-content p {
+            margin-bottom: var(--spacing-xs);
+            font-size: 1rem;
+        }
+
+        .info-card-content strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Details Section */
+        .details-section {
+            background-color: var(--bg-white);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        @media (min-width: 768px) {
+            .details-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .detail-box {
+            background: linear-gradient(135deg, var(--light-blue) 0%, rgba(230, 242, 255, 0.3) 100%);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .detail-box h3 {
+            color: #333333;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.5rem;
+        }
+
+        .detail-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .detail-box li {
+            padding: var(--spacing-xs) 0;
+            color: var(--text-dark);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .detail-box li::before {
+            content: '\2713';
+            color: #333333;
+            font-weight: bold;
+            margin-right: var(--spacing-sm);
+            font-size: 1.25rem;
+        }
+
+        .detail-box p {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .detail-box .highlight {
+            background-color: rgba(248, 242, 210, 0.3);
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-md);
+            margin-top: var(--spacing-sm);
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: #333333;
+            padding: var(--spacing-3xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            opacity: 0.3;
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            color: #333333;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-section p {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-lg);
+            color: rgba(51, 51, 51, 0.9);
+            line-height: 1.7;
+        }
+
+        .contact-box {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            margin-top: var(--spacing-lg);
+            border: 4px dotted white;
+        }
+
+        .contact-name {
+            font-family: 'Philosopher', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            color: #000000;
+        }
+
+        .contact-phone {
+            font-family: 'Philosopher', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            letter-spacing: 1px;
+            margin: var(--spacing-sm) 0;
+        }
+
+        .contact-phone a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-phone a:hover {
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: var(--bg-white);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-md);
+            font-family: 'Philosopher', sans-serif;
+            font-size: calc(1.125rem + 2px);
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: var(--spacing-md);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #FF5722;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--text-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: var(--spacing-xs) 0;
+            font-size: 0.875rem;
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .footer a:hover {
+            color: var(--accent-orange);
+            text-decoration: underline;
+        }
+
+        /* Stats Highlight */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .stat-box {
+            background-color: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+
+        .stat-number {
+            font-family: 'Philosopher', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: #333333;
+            margin-bottom: var(--spacing-xs);
+            line-height: 1;
+        }
+
+        /* Responsive font-sizing for stat numbers with media query fallback */
+        @media (min-width: 1200px) {
+            .stat-number {
+                font-size: 3.5rem; /* 56px - Desktop */
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .stat-number {
+                font-size: 2.5rem; /* 40px - Tablet */
+            }
+        }
+
+        @media (max-width: 767px) {
+            .stat-number {
+                font-size: 1.8rem; /* 28px - Mobile */
+            }
+        }
+
+        @media (max-width: 479px) {
+            .stat-number {
+                font-size: 1.5rem; /* 24px - Small Mobile */
+            }
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-medium);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* Banner Section Styles */
+        .banner-section {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .banner-desktop,
+        .banner-mobile {
+            width: 100%;
+            background-color: #e0e0e0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.125rem;
+            font-weight: 600;
+            padding: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px dashed #999;
+        }
+
+        .banner-desktop {
+            height: 600px;
+            display: flex;
+        }
+
+        .banner-mobile {
+            height: 450px;
+            display: none;
+        }
+
+        /* Responsive banner switching */
+        @media (max-width: 767px) {
+            .banner-desktop {
+                display: none;
+            }
+
+            .banner-mobile {
+                display: flex;
+            }
+        }
+
+        /* To add images later, use:
+           .banner-desktop { background-image: url('path/to/desktop-banner.jpg'); }
+           .banner-mobile { background-image: url('path/to/mobile-banner.jpg'); }
+        */
+
+        /* Responsive Utilities */
+        @media (max-width: 767px) {
+            .section {
+                padding: var(--spacing-xl) 0;
+            }
+
+            .header {
+                padding: var(--spacing-lg) 0;
+            }
+
+            .contact-section {
+                padding: var(--spacing-2xl) 0;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Accessibility */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Floating Action Buttons */
+        .floating-btn {
+            position: fixed;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 1000;
+            text-decoration: none;
+            border: none;
+        }
+
+        .floating-btn:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            bottom: 30px;
+            right: 30px;
+            background-color: #f8f2d2;
+            color: #333333;
+            font-size: 24px;
+            font-weight: bold;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #d4c5a0;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            bottom: 30px;
+            left: 30px;
+            background-color: #25D366;
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #20BA5A;
+        }
+
+        .whatsapp-icon {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        /* Responsive adjustments for mobile */
+        @media (max-width: 767px) {
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+            }
+
+            .scroll-to-top {
+                bottom: 20px;
+                right: 20px;
+                font-size: 20px;
+            }
+
+            .whatsapp-btn {
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .whatsapp-icon {
+                width: 26px;
+                height: 26px;
+            }
+        }
+
+        /* Gallery Carousel Styles */
+        .gallery-section {
+            overflow: hidden;
+            background-color: var(--bg-white);
+        }
+
+        .gallery-carousel-wrapper {
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .gallery-carousel-container {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .gallery-carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform;
+        }
+
+        .gallery-item {
+            flex: 0 0 33.333%;
+            padding: 0 8px;
+            box-sizing: border-box;
+        }
+
+        .gallery-image {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background-color: #e0e0e0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px dashed #999;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-nav:hover {
+            background-color: rgba(255, 255, 255, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .gallery-nav:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .gallery-nav-prev {
+            left: 0;
+        }
+
+        .gallery-nav-next {
+            right: 0;
+        }
+
+        .gallery-nav svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Mobile Gallery Styles */
+        @media (max-width: 767px) {
+            .gallery-carousel-wrapper {
+                padding: 0 50px;
+            }
+
+            .gallery-item {
+                flex: 0 0 100%;
+                padding: 0 12px;
+            }
+
+            .gallery-nav {
+                width: 40px;
+                height: 40px;
+            }
+
+            .gallery-nav svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .gallery-nav-prev {
+                left: 5px;
+            }
+
+            .gallery-nav-next {
+                right: 5px;
+            }
+        }
+
+        /* Tablet adjustments */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .gallery-carousel-wrapper {
+                padding: 0 55px;
+            }
+        }
+
+        .logo-placeholder{
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="">
+                    <img src="./assets/logo_3.png" alt="" width="200" height="200" srcset="">
+                </div>
+                <h1>Goa Padel League</h1>
+                <p class="header-subtitle">Goa's Premier Padel Tournament - Where Competition Meets Community</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <p><strong>Welcome to the Goa Padel League!</strong> Experience the thrill of competitive padel in one of India's most exciting sporting events. Join us as eight dynamic franchise teams battle it out for glory in this action-packed tournament.</p>
+                <p>Whether you're a seasoned player or new to the sport, the Goa Padel League offers an unparalleled platform to showcase your skills, connect with fellow enthusiasts, and be part of Goa's growing padel community.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Franchise Teams Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Franchise Teams</h2>
+                <p class="section-description">Meet the eight powerhouse teams competing in the Goa Padel League. Each franchise represents a unique part of Goa's vibrant culture and community.</p>
+            </div>
+            <div class="teams-grid">
+                <div class="team-card">
+                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Revora Stories</h3>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Anjuna Tweets</h3>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Siolim Snaps</h3>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Saligao Reels</h3>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Mapusa Memes</h3>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Panaji Posts</h3>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Candolim Tags</h3>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image-placeholder">Team Logo</div>
+                    <div class="team-info">
+                        <h3 class="team-name">Vasco Vibes</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Composition Section -->
+    <section class="section" style="background-color: var(--bg-white);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Team Composition</h2>
+                <p class="section-description">Each franchise team is carefully structured to ensure competitive balance and exciting gameplay throughout the league.</p>
+            </div>
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon">👨</div>
+                    <h3>Men Players</h3>
+                    <div class="info-card-content">
+                        <p><strong>6 Men</strong> per team</p>
+                        <p>Skilled athletes bringing power and strategy to the court</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">👩</div>
+                    <h3>Women Players</h3>
+                    <div class="info-card-content">
+                        <p><strong>4 Women</strong> per team</p>
+                        <p>Elite players showcasing finesse and competitive excellence</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">👑</div>
+                    <h3>Team Captain</h3>
+                    <div class="info-card-content">
+                        <p><strong>1 Captain</strong> per team</p>
+                        <p>Leadership and strategic guidance on and off the court</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Section -->
+    <section class="banner-section">
+        <div class="banner-desktop">
+            <img src="./assets/padel_ball.jpg" alt="" srcset="">
+        </div>
+        <div class="banner-mobile">
+            <img src="./assets/mobile_image.jpg" width="100%" height="100%" alt="" srcset="">
+        </div>
+    </section>
+
+
+
+    <!-- League Stats -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">League at a Glance</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Teams</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">14</div>
+                    <div class="stat-label">Matches per Team</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">59</div>
+                    <div class="stat-label">Total Matches</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">Top 4</div>
+                    <div class="stat-label">Playoff Teams</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matchday Format & League Structure -->
+    <section class="details-section section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Competition Details</h2>
+                <p class="section-description">Comprehensive tournament structure designed for maximum excitement and fair competition.</p>
+            </div>
+            <div class="details-grid">
+                <div class="detail-box">
+                    <h3>Matchday Format</h3>
+                    <p>Each matchday features an exciting <strong>Best-of-5</strong> format that showcases all aspects of padel excellence:</p>
+                    <ul>
+                        <li><strong>2 Men's Doubles</strong> matches</li>
+                        <li><strong>1 Women's Doubles</strong> match</li>
+                        <li><strong>2 Mixed Doubles</strong> matches</li>
+                    </ul>
+                    <div class="highlight">
+                        Every match counts towards your team's victory!
+                    </div>
+                </div>
+                <div class="detail-box">
+                    <h3>League Structure</h3>
+                    <p>A comprehensive tournament format ensuring every team gets ample opportunity to compete:</p>
+                    <ul>
+                        <li><strong>Double Round Robin</strong> format</li>
+                        <li><strong>14 matches</strong> per team in the league stage</li>
+                        <li><strong>Top 4 teams</strong> advance to playoffs</li>
+                        <li><strong>59 total matches</strong> throughout the season</li>
+                    </ul>
+                    <div class="highlight">
+                        Championship glory awaits the best team!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Carousel Section -->
+    <section class="gallery-section section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Photo Gallery</h2>
+                <p class="section-description">Capturing the excitement, energy, and spirit of the Goa Padel League.</p>
+            </div>
+        </div>
+        <div class="gallery-carousel-wrapper">
+            <button class="gallery-nav gallery-nav-prev" aria-label="Previous image">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <div class="gallery-carousel-container">
+                <div class="gallery-carousel-track">
+                    <div class="gallery-item">
+                        <div class="gallery-image">Gallery Image 1</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">Gallery Image 2</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">Gallery Image 3</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">Gallery Image 4</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">Gallery Image 5</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">Gallery Image 6</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">Gallery Image 7</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">Gallery Image 8</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">Gallery Image 9</div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">Gallery Image 10</div>
+                    </div>
+                </div>
+            </div>
+            <button class="gallery-nav gallery-nav-next" aria-label="Next image">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact / Registration Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Ready to Join the Action?</h2>
+                <p>Don't miss your chance to be part of Goa's most exciting padel tournament! Register now and secure your spot in the league.</p>
+                <div class="contact-box">
+                    <p class="contact-name">Contact for Player Registration:</p>
+                    <div class="contact-phone">
+                        <a href="tel:+919175075999">Chirag<br>+91 91750 75999</a>
+                    </div>
+                    <p style="margin-top: var(--spacing-md); font-size: 1rem;">Get in touch today to learn more about registration, team assignments, and tournament schedules.</p>
+                    <a href="tel:+919175075999" class="cta-button">Call Now to Register</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 <a href="/">Goa Padel League</a>. All rights reserved.</p>
+            <p>Bringing the passion of padel to the heart of Goa.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919876543210?text=Hello%2C%20I'm%20interested%20in%20Goa%20Padel%20League" 
+       class="floating-btn whatsapp-btn" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Chat on WhatsApp">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+        </svg>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button class="floating-btn scroll-to-top" aria-label="Scroll to top">
+        ↑
+    </button>
+
+    <script>
+        // Smooth scroll for anchor links (if any are added)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll (optional enhancement)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for fade-in animation
+        document.querySelectorAll('.team-card, .info-card, .stat-box, .detail-box').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Image placeholder functionality
+        // To add an image, you can set the background-image CSS property
+        // Example: document.querySelector('.logo-placeholder').style.backgroundImage = 'url("path/to/image.jpg")';
+        
+        // Scroll to Top Button Functionality
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        
+        // Show/hide scroll to top button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 200) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scroll to top when button is clicked
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        console.log('Goa Padel League website loaded successfully!');
+        console.log('To add images, update the background-image CSS property of placeholder elements.');
+        console.log('Banner section ready: Add images via CSS background-image property');
+        console.log('Desktop banner: .banner-desktop (1920x600) - visible on screens > 768px');
+        console.log('Mobile banner: .banner-mobile (300x450) - visible on screens <= 767px');
+        console.log('Floating action buttons active: WhatsApp chat and Scroll to Top');
+
+        // Gallery Carousel Functionality
+        (function() {
+            const track = document.querySelector('.gallery-carousel-track');
+            const items = Array.from(document.querySelectorAll('.gallery-item'));
+            const prevBtn = document.querySelector('.gallery-nav-prev');
+            const nextBtn = document.querySelector('.gallery-nav-next');
+            
+            if (!track || items.length === 0) return;
+
+            let currentIndex = 0;
+            let autoplayInterval;
+            let isTransitioning = false;
+            
+            // Determine slides to show based on screen size
+            function getSlidesToShow() {
+                return window.innerWidth <= 767 ? 1 : 3;
+            }
+            
+            let slidesToShow = getSlidesToShow();
+            const totalSlides = items.length;
+            
+            // Clone slides for infinite loop
+            const cloneBefore = [];
+            const cloneAfter = [];
+            
+            // Clone enough slides for smooth infinite scrolling
+            for (let i = 0; i < slidesToShow; i++) {
+                const cloneStart = items[totalSlides - slidesToShow + i].cloneNode(true);
+                const cloneEnd = items[i].cloneNode(true);
+                cloneBefore.push(cloneStart);
+                cloneAfter.push(cloneEnd);
+            }
+            
+            // Add clones to track
+            cloneBefore.forEach(clone => track.insertBefore(clone, track.firstChild));
+            cloneAfter.forEach(clone => track.appendChild(clone));
+            
+            // Start at the first real slide (after clones)
+            currentIndex = slidesToShow;
+            
+            function getSlideWidth() {
+                return items[0].offsetWidth;
+            }
+            
+            function updateCarousel(smooth = true) {
+                const slideWidth = getSlideWidth();
+                const offset = -currentIndex * slideWidth;
+                
+                if (smooth) {
+                    track.style.transition = 'transform 0.5s ease-in-out';
+                } else {
+                    track.style.transition = 'none';
+                }
+                
+                track.style.transform = `translateX(${offset}px)`;
+            }
+            
+            function nextSlide() {
+                if (isTransitioning) return;
+                
+                isTransitioning = true;
+                currentIndex++;
+                updateCarousel(true);
+                
+                // Check if we need to jump back to start
+                setTimeout(() => {
+                    if (currentIndex >= totalSlides + slidesToShow) {
+                        currentIndex = slidesToShow;
+                        updateCarousel(false);
+                    }
+                    isTransitioning = false;
+                }, 500);
+            }
+            
+            function prevSlide() {
+                if (isTransitioning) return;
+                
+                isTransitioning = true;
+                currentIndex--;
+                updateCarousel(true);
+                
+                // Check if we need to jump to end
+                setTimeout(() => {
+                    if (currentIndex < slidesToShow) {
+                        currentIndex = totalSlides + slidesToShow - 1;
+                        updateCarousel(false);
+                    }
+                    isTransitioning = false;
+                }, 500);
+            }
+            
+            function startAutoplay() {
+                stopAutoplay();
+                autoplayInterval = setInterval(nextSlide, 2500);
+            }
+            
+            function stopAutoplay() {
+                if (autoplayInterval) {
+                    clearInterval(autoplayInterval);
+                    autoplayInterval = null;
+                }
+            }
+            
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoplay();
+                startAutoplay();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoplay();
+                startAutoplay();
+            });
+            
+            // Pause on hover
+            const carouselWrapper = document.querySelector('.gallery-carousel-wrapper');
+            carouselWrapper.addEventListener('mouseenter', stopAutoplay);
+            carouselWrapper.addEventListener('mouseleave', startAutoplay);
+            
+            // Handle window resize
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    const newSlidesToShow = getSlidesToShow();
+                    if (newSlidesToShow !== slidesToShow) {
+                        slidesToShow = newSlidesToShow;
+                        // Reinitialize carousel
+                        location.reload();
+                    } else {
+                        updateCarousel(false);
+                    }
+                }, 250);
+            });
+            
+            // Initialize
+            updateCarousel(false);
+            startAutoplay();
+            
+            console.log('Gallery carousel initialized with ' + totalSlides + ' images');
+            console.log('Autoplay active: sliding every 2.5 seconds');
+            console.log('Desktop: 3 images visible | Mobile: 1 image visible');
+        })();
+    </script>
+</body>
+</html>
