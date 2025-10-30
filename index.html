@@ -184,6 +184,10 @@
             border-radius: 2px;
         }
 
+        .section-title.gallery-title::after {
+            display: none;
+        }
+
         .section-description {
             max-width: 700px;
             margin: var(--spacing-md) auto 0;
@@ -235,7 +239,7 @@
 
         @media (min-width: 1024px) {
             .teams-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
@@ -946,8 +950,7 @@
     <section class="intro-section">
         <div class="container">
             <div class="intro-content">
-                <p><strong>Welcome to the Goa Padel League!</strong> Experience the thrill of competitive padel in one of India's most exciting sporting events. Join us as eight dynamic franchise teams battle it out for glory in this action-packed tournament.</p>
-                <p>Whether you're a seasoned player or new to the sport, the Goa Padel League offers an unparalleled platform to showcase your skills, connect with fellow enthusiasts, and be part of Goa's growing padel community.</p>
+                <p>The Goa Padel League (GPL) marks a significant milestone in the development of padel in India. Featuring 6 franchise teams, the GPL promises a thrilling season of competitive matches, strategic gameplay, and high viewer engagement. The league is designed to promote fairness and provide a platform for both male and female players to showcase their skills.</p>
             </div>
         </div>
     </section>
@@ -957,71 +960,55 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Franchise Teams</h2>
-                <p class="section-description">Meet the eight powerhouse teams competing in the Goa Padel League. Each franchise represents a unique part of Goa's vibrant culture and community.</p>
+                <p class="section-description">Meet the six powerhouse teams competing in the Goa Padel League. Each franchise represents a unique part of Goa's vibrant culture and community.</p>
             </div>
             <div class="teams-grid">
                 <div class="team-card">
                     <div class="team-image-placeholder">
-                        <img src="/assets/teams.jpg" alt="Revora Stories Team" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/teams.jpg" alt="Team Revora" loading="lazy">
                     </div>
                     <div class="team-info">
-                        <h3 class="team-name">Revora Stories</h3>
+                        <h3 class="team-name">TEAM REVORA</h3>
                     </div>
                 </div>
                 <div class="team-card">
                     <div class="team-image-placeholder">
-                        <img src="/assets/teams.jpg" alt="Anjuna Tweets Team" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/teams.jpg" alt="Team Assagao" loading="lazy">
                     </div>
                     <div class="team-info">
-                        <h3 class="team-name">Anjuna Tweets</h3>
+                        <h3 class="team-name">TEAM ASSAGAO</h3>
                     </div>
                 </div>
                 <div class="team-card">
                     <div class="team-image-placeholder">
-                        <img src="/assets/teams.jpg" alt="Siolim Snaps Team" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/teams.jpg" alt="Team Anjuna" loading="lazy">
                     </div>
                     <div class="team-info">
-                        <h3 class="team-name">Siolim Snaps</h3>
+                        <h3 class="team-name">TEAM ANJUNA</h3>
                     </div>
                 </div>
                 <div class="team-card">
                     <div class="team-image-placeholder">
-                        <img src="/assets/teams.jpg" alt="Saligao Reels Team" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/teams.jpg" alt="Team Vagator" loading="lazy">
                     </div>
                     <div class="team-info">
-                        <h3 class="team-name">Saligao Reels</h3>
+                        <h3 class="team-name">TEAM VAGATOR</h3>
                     </div>
                 </div>
                 <div class="team-card">
                     <div class="team-image-placeholder">
-                        <img src="/assets/teams.jpg" alt="Mapusa Memes Team" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/teams.jpg" alt="Team Siolim" loading="lazy">
                     </div>
                     <div class="team-info">
-                        <h3 class="team-name">Mapusa Memes</h3>
+                        <h3 class="team-name">TEAM SIOLIM</h3>
                     </div>
                 </div>
                 <div class="team-card">
                     <div class="team-image-placeholder">
-                        <img src="/assets/teams.jpg" alt="Panaji Posts Team" loading="lazy">
+                        <img src="https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/teams.jpg" alt="Team Saligao" loading="lazy">
                     </div>
                     <div class="team-info">
-                        <h3 class="team-name">Panaji Posts</h3>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image-placeholder">
-                        <img src="/assets/teams.jpg" alt="Candolim Tags Team" loading="lazy">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Candolim Tags</h3>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-image-placeholder">
-                        <img src="/assets/teams.jpg" alt="Vasco Vibes Team" loading="lazy">
-                    </div>
-                    <div class="team-info">
-                        <h3 class="team-name">Vasco Vibes</h3>
+                        <h3 class="team-name">TEAM SALIGAO</h3>
                     </div>
                 </div>
             </div>
@@ -1040,7 +1027,7 @@
                     <div class="info-card-icon">👨</div>
                     <h3>Men Players</h3>
                     <div class="info-card-content">
-                        <p><strong>6 Men</strong> per team</p>
+                        <p><strong>8 Men</strong> per team</p>
                         <p>Skilled athletes bringing power and strategy to the court</p>
                     </div>
                 </div>
@@ -1048,17 +1035,31 @@
                     <div class="info-card-icon">👩</div>
                     <h3>Women Players</h3>
                     <div class="info-card-content">
-                        <p><strong>4 Women</strong> per team</p>
+                        <p><strong>2 Women</strong> per team</p>
                         <p>Elite players showcasing finesse and competitive excellence</p>
                     </div>
                 </div>
                 <div class="info-card">
                     <div class="info-card-icon">👑</div>
-                    <h3>Team Captain</h3>
+                    <h3>Team Leadership</h3>
                     <div class="info-card-content">
-                        <p><strong>1 Captain</strong> per team</p>
+                        <p><strong>1 Captain &amp; Vice Captain</strong></p>
                         <p>Leadership and strategic guidance on and off the court</p>
                     </div>
+                </div>
+            </div>
+            <div class="details-grid" style="margin-top: var(--spacing-xl);">
+                <div class="detail-box">
+                    <h3>Game Day Attendance Requirements</h3>
+                    <p>On each game day, a minimum of <strong>6 male players</strong> and <strong>1 female player</strong> must be present to ensure competitive matches.</p>
+                </div>
+                <div class="detail-box">
+                    <h3>Additional Team Info</h3>
+                    <ul>
+                        <li>Recommended squad: <strong>6-8 players</strong> (minimum 2 female)</li>
+                        <li>A player may play <strong>max 2 rubbers</strong> per fixture</li>
+                        <li>Mixed Doubles must field <strong>1 male + 1 female</strong></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1072,65 +1073,64 @@
 
 
 
-    <!-- League Stats -->
+    <!-- Season Details -->
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">League at a Glance</h2>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-number">8</div>
-                    <div class="stat-label">Teams</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">14</div>
-                    <div class="stat-label">Matches per Team</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">59</div>
-                    <div class="stat-label">Total Matches</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">Top 4</div>
-                    <div class="stat-label">Playoff Teams</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Matchday Format & League Structure -->
-    <section class="details-section section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Competition Details</h2>
-                <p class="section-description">Comprehensive tournament structure designed for maximum excitement and fair competition.</p>
+                <h2 class="section-title">Season Details</h2>
             </div>
             <div class="details-grid">
                 <div class="detail-box">
-                    <h3>Matchday Format</h3>
-                    <p>Each matchday features an exciting <strong>Best-of-5</strong> format that showcases all aspects of padel excellence:</p>
+                    <h3>Season 1</h3>
+                    <p>Season 1 will include <strong>6 teams</strong> competing for the championship title.</p>
                     <ul>
-                        <li><strong>2 Men's Doubles</strong> matches</li>
-                        <li><strong>1 Women's Doubles</strong> match</li>
-                        <li><strong>2 Mixed Doubles</strong> matches</li>
+                        <li><strong>Player Auction:</strong> 01/12/2025</li>
+                        <li><strong>First Match:</strong> 07/01/2026</li>
+                    </ul>
+                </div>
+                <div class="detail-box">
+                    <h3>Game Format</h3>
+                    <p>Each game day will feature:</p>
+                    <ul>
+                        <li><strong>3 Intermediate Men's Doubles Matches</strong></li>
+                        <li><strong>1 Mixed Open Doubles Match</strong></li>
                     </ul>
                     <div class="highlight">
                         Every match counts towards your team's victory!
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tournament Structure -->
+    <section class="details-section section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tournament Format</h2>
+                <p class="section-description">Comprehensive tournament structure designed for maximum excitement and fair competition.</p>
+            </div>
+            <div class="details-grid">
                 <div class="detail-box">
-                    <h3>League Structure</h3>
-                    <p>A comprehensive tournament format ensuring every team gets ample opportunity to compete:</p>
+                    <h3>League Stage</h3>
                     <ul>
-                        <li><strong>Double Round Robin</strong> format</li>
-                        <li><strong>14 matches</strong> per team in the league stage</li>
-                        <li><strong>Top 4 teams</strong> advance to playoffs</li>
-                        <li><strong>59 total matches</strong> throughout the season</li>
+                        <li><strong>Round-robin format</strong> for the league stage</li>
+                        <li>The <strong>top 4 teams</strong> will advance to the semi-finals</li>
+                        <li><strong>1 final match</strong> to determine the champion</li>
                     </ul>
                     <div class="highlight">
                         Championship glory awaits the best team!
                     </div>
+                </div>
+                <div class="detail-box">
+                    <h3>Fixture Structure</h3>
+                    <p>Each fixture between two teams consists of <strong>4 matches (rubbers)</strong>:</p>
+                    <ul>
+                        <li><strong>1. Men's Intermediate 1</strong></li>
+                        <li><strong>2. Men's Intermediate 2</strong></li>
+                        <li><strong>3. Mixed Doubles 1</strong></li>
+                        <li><strong>4. Men's Intermediate 3</strong></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1140,7 +1140,7 @@
     <section class="gallery-section section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Gallery</h2>
+                <h2 class="section-title gallery-title">Gallery</h2>
                 <p class="section-description">Capturing the excitement, energy, and spirit of the Goa Padel League.</p>
             </div>
         </div>
@@ -1154,37 +1154,37 @@
                 <div class="gallery-carousel-track">
                     <div class="gallery-item">
                         <div class="gallery-image">
-                            <img src="/assets/g1.jpg" alt="Gallery Image 1" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/g1.jpg" alt="Gallery Image 1" loading="lazy">
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-image">
-                            <img src="/assets/g2.jpg" alt="Gallery Image 2" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/g2.jpg" alt="Gallery Image 2" loading="lazy">
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-image">
-                            <img src="/assets/g3.jpg" alt="Gallery Image 3" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/g3.jpg" alt="Gallery Image 3" loading="lazy" onerror="this.style.display='none';">
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-image">
-                            <img src="/assets/g4.jpg" alt="Gallery Image 4" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/g4.jpg" alt="Gallery Image 4" loading="lazy">
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-image">
-                            <img src="/assets/g5.jpg" alt="Gallery Image 5" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/g5.jpg" alt="Gallery Image 5" loading="lazy" onerror="this.style.display='none';">
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-image">
-                            <img src="/assets/g6.jpg" alt="Gallery Image 6" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/g6.jpg" alt="Gallery Image 6" loading="lazy">
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-image">
-                            <img src="/assets/g7.jpg" alt="Gallery Image 7" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/toolsusepremium-ship-it/goapadel/main/assets/g7.jpg" alt="Gallery Image 7" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -1201,10 +1201,10 @@
     <section class="contact-section">
         <div class="container">
             <div class="contact-content">
-                <h2>Ready to Join the Action?</h2>
-                <p>Don't miss your chance to be part of Goa's most exciting padel tournament! Register now and secure your spot in the league.</p>
+                <h2>Player Registration</h2>
+                <p>Please reach out here for Player Registration. Don't miss your chance to be part of Goa's most exciting padel tournament!</p>
                 <div class="contact-box">
-                    <p class="contact-name">Contact for Player Registration:</p>
+                    <p class="contact-name">Contact:</p>
                     <div class="contact-phone">
                         <a href="tel:+919175075999">Chirag<br>+91 91750 75999</a>
                     </div>
